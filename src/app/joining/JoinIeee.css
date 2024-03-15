@@ -1,0 +1,33 @@
+/* JoinIeee.css */
+
+.join-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .join-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .join-form input,
+  .join-form textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .join-form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .join-form button:hover {
+    background-color: #0056b3;
+  }
+  
