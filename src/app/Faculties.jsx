@@ -11,8 +11,8 @@ const Faculties = () => {
           <Heading subtitle='FACULTIES' title='Our Faculty Advisor' />
 
           <div className='content grid2'>
-            {testimonal.map((val) => (
-              <div className='items shadow'>
+            {testimonal.map((val,key) => (
+              <div key={key} className='items shadow'>
                 <div className='box flex'>
                   <div className='img'>
                     <img src={val.cover} alt='' />

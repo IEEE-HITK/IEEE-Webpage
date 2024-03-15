@@ -46,3 +46,20 @@
   background-color: #fff;
   color: #1eb2a6;
 }
+
+
+@media(max-width:750px)
+{
+  .grid2{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .flex{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .img{
+    display: flex !important;
+    justify-content: center !important;
+  }
+}

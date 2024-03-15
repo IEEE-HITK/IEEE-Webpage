@@ -76,6 +76,19 @@
     width: 100%;
   }
   .awrapper {
-    height: 50vh;
+    height: auto !important;
+  }
+
+  .item{
+    width:90vw !important;
+  }
+  .items{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .right{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 }
