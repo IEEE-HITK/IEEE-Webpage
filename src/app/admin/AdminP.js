@@ -3,13 +3,13 @@ import React,{ useEffect } from 'react';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Admin from './Admin';
 import Editor from './Editor';
+import './admin.css';
 import None from './None';
 const AdminP = ({data}) => {
     const [auth, setAuth] = React.useState("NL");
     const { user, error, isLoading } = useUser();
     useEffect(() => {
-        console.log("yooo")
-        console.log("in adminP",user.email,data.data);
+        console.log(user);
         if(!data.data) return;
         for (let i = 0; i < data.data.length; i++) {
             if(user.email == data.data[i].Email){
@@ -24,7 +24,9 @@ const AdminP = ({data}) => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
   return (
-    <div>
+    <div className='bgadmin73'>
+        <img src={user.picture} alt="alt" /> 
+        <h2>{user.name}</h2>
         {(auth == "NL")?<div><None /></div>:
         (auth == "Admin")?<div><Admin data={data} /></div>:
         (auth=="Editor")?<div><Editor /></div>:<div><None /></div>}

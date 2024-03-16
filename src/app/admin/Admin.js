@@ -1,4 +1,6 @@
 import React from 'react'
+import TestAdd from './TestAdd';
+import EventAdd from './EventAdd'
 
 const Admin = ({data}) => {
     const [email, setEmail] = React.useState("");
@@ -8,6 +10,24 @@ const Admin = ({data}) => {
     }
     const handleChange2 = (e) => {
         setAuth(e.target.value);
+    }
+    const handleDelete = (emailed) => {
+        const dataa = {Email:emailed};
+        fetch('/api', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dataa),
+        })
+        .then(response => response.json())
+        .then(dataa => {
+            console.log('Success:', dataa);
+            alert("Deleted pls reload the page");
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
     }
     const handleSubmit = () => {
         const dataa = {Email:email,Auth:auth};
@@ -21,6 +41,7 @@ const Admin = ({data}) => {
         .then(response => response.json())
         .then(dataa => {
             console.log('Success:', dataa);
+            alert("Submitted pls reload the page");
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -29,11 +50,12 @@ const Admin = ({data}) => {
   return (
     <div>HELLO ADMIN!<br />
         Here is admin list :
-        <table style={{borderWidth:"2px",borderColor:"white"}}>
+        <table style={{borderWidth:"2px",borderColor:"black"}}>
             <thead>
-                <tr style={{borderWidth:"2px",borderColor:"white"}}>
-                    <th style={{borderWidth:"2px",borderColor:"white"}}>Email</th>
-                    <th style={{borderWidth:"2px",borderColor:"white"}}>Auth</th>
+                <tr style={{borderWidth:"2px",borderColor:"black"}}>
+                    <th style={{borderWidth:"2px",borderColor:"black"}}>Email</th>
+                    <th style={{borderWidth:"2px",borderColor:"black"}}>Auth</th>
+                    <th style={{borderWidth:"2px",borderColor:"black"}}>DELETE</th>
                 </tr>
             </thead>
 
@@ -42,8 +64,9 @@ const Admin = ({data}) => {
         {(data.data).map((item,key) => {
             return (
                 <tr key={key} >
-                    <th style={{borderWidth:"2px",borderColor:"white"}}>{item.Email}</th>
-                    <th style={{borderWidth:"2px",borderColor:"white"}}>{item.Auth}</th>
+                    <th style={{borderWidth:"2px",borderColor:"black"}}>{item.Email}</th>
+                    <th style={{borderWidth:"2px",borderColor:"black"}}>{item.Auth}</th>
+                    <th style={{borderWidth:"2px",borderColor:"black"}}><button onClick={()=>handleDelete(item.Email)}>Delete</button></th>
                 </tr>
             )
         })}
@@ -58,6 +81,10 @@ const Admin = ({data}) => {
             </select>
             <button onClick={handleSubmit}>Submit</button>
         </div>
+        <hr />
+        <TestAdd />
+        <hr />
+        <EventAdd />
     </div>
   )
 }

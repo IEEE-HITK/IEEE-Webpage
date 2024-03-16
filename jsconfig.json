@@ -4,7 +4,9 @@
     "@const/*": ["./constant/*"],
       "@com/*": ["./common/*"],
       "@/*": ["./src/*"],
-      "@lib/*": ["./lib/*"] 
+      "@lib/*": ["./lib/*"],
+      "@cont/*": ["./lib/mongo/controller/*"],
+      "@schema/*": ["./lib/mongo/schema/*"],
     }
   }
 }
