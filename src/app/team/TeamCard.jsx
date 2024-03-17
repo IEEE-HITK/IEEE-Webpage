@@ -3,7 +3,7 @@ import { team } from "@const/dummydata"
 
 const TeamCard = () => {
   return (
-    <>
+    <div className='team'>
       {team.map((val) => (
         <div className='items shadow'>
           <div className='img'>
@@ -22,7 +22,7 @@ const TeamCard = () => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   )
 }
 
