@@ -5,7 +5,7 @@ import Header from "@com/header/Header";
 import Footer from "@com/footer/Footer";
 import Loader from "./loading"
 const inter = Inter({ subsets: ["latin"] });
-import React, { Suspense } from "react";
+import React from "react";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 export const metadata = {
   title: "IEEE",
