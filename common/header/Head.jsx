@@ -1,8 +1,19 @@
 import React from "react"
-
+import dynamic from 'next/dynamic';
 const Head = () => {
+  const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
+    ssr: false,
+});
   return (
     <>
+    <AnimatedCursor
+    innerSize={0}
+    outerSize={8}
+    color='89, 11, 111'
+    outerAlpha={0.2}
+    innerScale={0.7}
+    outerScale={5}
+    showSystemCursor={true} />
       <section className='head'>
         <div className='container flexSB'>
           <div className='logo'>

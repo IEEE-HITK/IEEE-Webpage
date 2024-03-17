@@ -7,6 +7,7 @@
       "@lib/*": ["./lib/*"],
       "@cont/*": ["./lib/mongo/controller/*"],
       "@schema/*": ["./lib/mongo/schema/*"],
+      "@utils/*": ["./utils/*"],
     }
   }
 }

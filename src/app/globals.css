@@ -201,3 +201,25 @@ p {
     overflow-x: hidden !important;
   }
 }
+#loader{
+  height: 100% !important;
+  width: 100% !important;
+  background-color: #000;
+  position: fixed !important;
+  z-index: 999 !important;
+  top: 0 !important;
+  transition: all ease 0.7s !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+.scroll {
+  scrollbar-width: none;
+}

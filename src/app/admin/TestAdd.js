@@ -57,39 +57,42 @@ const TestAdd = () => {
         });
     }
   return (
-    <div>
+    <div class="testimonial-container-124">
         <br />
-        Here is TESTIMONIAL LIST :
-        <table style={{borderWidth:"2px",borderColor:"black"}}>
+        <p>Here is TESTIMONIAL LIST:</p>
+        <div className='table-container-122'>
+        <table class="testimonial-table-124">
             <thead>
-                <tr style={{borderWidth:"2px",borderColor:"black"}}>
-                    <th style={{borderWidth:"2px",borderColor:"black"}}>Name</th>
-                    <th style={{borderWidth:"2px",borderColor:"black"}}>Message</th>
-                    <th style={{borderWidth:"2px",borderColor:"black"}}>DELETE</th>
+                <tr>
+                    <th>Name</th>
+                    <th>Message</th>
+                    <th>DELETE</th>
                 </tr>
             </thead>
-
-        <tbody>
-        
-        {(data.length>0)?data.map((item,key) => {
-            return (
-                <tr key={key} >
-                    <th style={{borderWidth:"2px",borderColor:"black"}}>{item.Name}</th>
-                    <th style={{borderWidth:"2px",borderColor:"black"}}>{item.Message}</th>
-                    <th style={{borderWidth:"2px",borderColor:"black"}}><button onClick={()=>handleDelete(item.Message)}>Delete</button></th>
-                </tr>
-            )
-        }):<></>}
-        </tbody>
+            <tbody>
+                {(data.length>0) ? data.map((item, key) => {
+                    return (
+                        <tr key={key}>
+                            <td>{item.Name}</td>
+                            <td>{item.Message}</td>
+                            <td><button onClick={() => handleDelete(item.Message)}>Delete</button></td>
+                        </tr>
+                    )
+                }) : <></>}
+            </tbody>
         </table>
-        <div>
-            <label for="fname">Name:</label>
-            <input style={{color:"black"}} type="text" id="fname" name="fname" placeholder='Enter Name' onChange={handleChange} />
-            <label for="fname">Message:</label>
-            <textarea style={{color:"black"}} type="text" id="fname" name="fname" placeholder='Enter Message' onChange={handleChange2} />
+        </div>
+        <div class="form-container-124">
+            
+            <label style={{fontSize:"25px"}}>Add Testimonial Form</label>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name" onChange={handleChange} />
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Enter Message" onChange={handleChange2}></textarea>
             <button onClick={handleSubmit}>Submit</button>
         </div>
     </div>
+
   )
 }
 

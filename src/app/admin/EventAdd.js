@@ -163,114 +163,121 @@ const TestAdd = () => {
     setSpeakers(newSpeakers);
   };
   return (
-    <div>
-        <br />
-        Here is EVENT LIST :
-        <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Venue</th>
-          <th>Time</th>
-          <th>Event Details</th>
-          <th>Event Banner</th>
-          <th>Event Gallery</th>
-          <th>Event Type</th>
-          <th>Speakers</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {(data.length>0)?data.map((event, index) => (
-          <tr key={index}>
-            <td>{event.Name}</td>
-            <td>{event.Venue}</td>
-            <td>{event.Time}</td>
-            <td>{event.EventDetails}</td>
-            <td><img src={event.EventBanner} alt="Event Banner" style={{ width: '100px', height: 'auto' }} /></td>
-            <td>
-              <ul>
-                {(event.EventGallery!==undefined&&event.EventGallery.length>0&&event.EventGallery!==null)?event.EventGallery.map((image, i) => (
-                  <li key={i}><img src={image} alt={`Gallery Image ${i}`} style={{ width: '50px', height: 'auto' }} /></li>
-                )):<>No pic yet</>}
-                <li>
-                  <input type="text" value={galleryInput} onChange={handleEditGalleryInputChange} />
-                  <button onClick={() => handleAddGallery(index)}>Add</button>
-                </li>
-              </ul>
-            </td>
-            <td>{event.EventType}</td>
-            {(event.EventType==="speaker")?
-            <td>
-              {event.Speaker.map((speaker, i) => (
-                <div key={i}>
-                  <p>{speaker.SpeakerName}</p>
-                  <p>{speaker.SpeakerDetails}</p>
-                  <img src={speaker.SpeakerImage} alt={`Speaker ${i}`} style={{ width: '50px', height: 'auto' }} />
-                </div>
-              ))}
-            </td>
-            :<td>No Speaker</td>}
-            <td>
-              <button onClick={()=>{handleUpdate(event.Name,index)}}>Update</button>
-              <button onClick={()=>{handleDelete(event.Name)}}>Delete</button>
-            </td>
-          </tr>
-        )):<tr>
-            <td>No events yet</td>
-            </tr>}
-      </tbody>
-    </table>
-        <div>
-            <label for="fname">Name:</label>
-            <input style={{color:"black"}} type="text" id="fname" name="fname" placeholder='Enter Name' onChange={handleChange} />
-            <label for="fname">Event Details:</label>
-            <textarea style={{color:"black"}} type="text" id="fname" name="fname" placeholder='Enter EventDetails' onChange={handleChange2} />
-            <label for="fname">Event Banner:</label>
-            <input style={{color:"black"}} type="file" id="fname" name="fname" placeholder='Enter EventBanner' onChange={handleChange3} />
-            <button onClick={addBanner}>Upload</button>
-            <label for="fname">Time:</label>
-            <input style={{color:"black"}} type="text" id="fname" name="fname" placeholder='Enter Time' onChange={handleChange4} />
-            <label for="fname">Venue:</label>
-            <input style={{color:"black"}} type="text" id="fname" name="fname" placeholder='Enter Venue' onChange={handleChange5} />
-            <label for="fname">Event Type:</label>
-            <select style={{color:"black"}} id="fname" name="fname" onChange={handleChange6}>
-                <option value="non-speaker">Non Speaker</option>
-                <option value="speaker">Speaker</option>
-            </select>
-            {(eventType==="speaker")?
+    <div class="event-container-125">
+      <br />
+      <p>Here is EVENT LIST:</p>
+      <div className='table-container-122'>
+      <table class="event-table-125">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Venue</th>
+                  <th>Time</th>
+                  <th>Event Details</th>
+                  <th>Event Banner</th>
+                  <th>Event Gallery</th>
+                  <th>Event Type</th>
+                  <th>Speakers</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+          <tbody>
+              {(data.length > 0) ? data.map((event, index) => (
+                  <tr key={index}>
+                      <td>{event.Name}</td>
+                      <td>{event.Venue}</td>
+                      <td>{event.Time}</td>
+                      <td>{event.EventDetails}</td>
+                      <td><img src={event.EventBanner} alt="Event Banner" style={{ width: '100px', height: 'auto' }} /></td>
+                      <td>
+                          <ul>
+                              {(event.EventGallery !== undefined && event.EventGallery.length > 0 && event.EventGallery !== null) ? event.EventGallery.map((image, i) => (
+                                  <li key={i}><img src={image} alt={`Gallery Image ${i}`} style={{ width: '80px', height: 'auto' }} />
+                                  <hr style={{marginTop:"10px"}} /></li>
+                              )) : <>No pic yet</>}
+                              <li>
+                                  <input type="text" placeholder="enter url of next pic" value={galleryInput} onChange={handleEditGalleryInputChange} />
+                                  <button style={{marginLeft:"10px"}} onClick={() => handleAddGallery(index)}>Add</button>
+                              </li>
+                          </ul>
+                      </td>
+                      <td>{event.EventType}</td>
+                      {(event.EventType === "speaker") ?
+                          <td>
+                              {event.Speaker.map((speaker, i) => (
+                                  <div key={i}>
+                                      <p>Name: {speaker.SpeakerName}</p>
+                                      <p>Details: {speaker.SpeakerDetails}</p>
+                                      <img src={speaker.SpeakerImage} alt={`Speaker ${i}`} style={{ width: '50px', height: 'auto' }} />
+                                      <hr style={{marginTop:"10px"}} />
+                                  </div>
+                                  
+                              ))}
+                          </td>
+                          : <td>No Speaker</td>}
+                      <td>
+                          <button onClick={() => { handleUpdate(event.Name, index) }}>Update</button>
+                          <button onClick={() => { handleDelete(event.Name) }}>Delete</button>
+                      </td>
+                  </tr>
+              )) : <tr>
+                  <td>No events yet</td>
+              </tr>}
+          </tbody>
+      </table>
+      </div>
+      <div class="form-container-125">
+      <label style={{fontSize:"25px"}}>Add Event Form</label>
+          <label for="name">Name:</label>
+          <input style={{ color: "black" }} type="text" id="name" name="name" placeholder='Enter Name' onChange={handleChange} />
+          <label for="eventDetails">Event Details:</label>
+          <textarea style={{ color: "black" }} type="text" id="eventDetails" name="eventDetails" placeholder='Enter EventDetails' onChange={handleChange2} />
+          <label for="eventBanner">Event Banner:</label>
+          <input style={{ color: "black" }} type="file" id="eventBanner" name="eventBanner" placeholder='Enter EventBanner' onChange={handleChange3} />
+          <button onClick={addBanner}>Upload</button>
+          <label for="time">Time:</label>
+          <input style={{ color: "black" }} type="text" id="time" name="time" placeholder='Enter Time' onChange={handleChange4} />
+          <label for="venue">Venue:</label>
+          <input style={{ color: "black" }} type="text" id="venue" name="venue" placeholder='Enter Venue' onChange={handleChange5} />
+          <label for="eventType">Event Type:</label>
+          <select style={{ color: "black" }} id="eventType" name="eventType" onChange={handleChange6}>
+              <option value="non-speaker">Non Speaker</option>
+              <option value="speaker">Speaker</option>
+          </select>
+          {(eventType === "speaker") ?
               <div>
-              {speakers.map((speaker, index) => (
-                <div key={index}>
-                  <input
-                    type="text"
-                    name="SpeakerName"
-                    placeholder="Speaker Name"
-                    value={speaker.SpeakerName}
-                    onChange={(event) => handleInputChange(index, event)}
-                  />
-                  <input
-                    type="file"
-                    name="SpeakerImage"
-                    onChange={(event) => handleImageChange(index, event)}
-                  />
-                  
-                <button onClick={()=>{handlespim(index)}}>Upload</button>
+                  {speakers.map((speaker, index) => (
+                      <div key={index}>
+                          <input
+                              type="text"
+                              name="SpeakerName"
+                              placeholder="Speaker Name"
+                              value={speaker.SpeakerName}
+                              onChange={(event) => handleInputChange(index, event)}
+                          />
+                          <input
+                              type="file"
+                              name="SpeakerImage"
+                              onChange={(event) => handleImageChange(index, event)}
+                          />
 
-                  <textarea
-                    name="SpeakerDetails"
-                    placeholder="Speaker Details"
-                    value={speaker.SpeakerDetails}
-                    onChange={(event) => handleInputChange(index, event)}
-                  />
-                </div>
-              ))}
-              <button onClick={handleAddSpeaker}>Add Speaker</button>
-            </div>
-            :<></>}
-            <button onClick={handleSubmit}>Submit</button>
-        </div>
-    </div>
+                          <button onClick={() => { handlespim(index) }}>Upload</button>
+
+                          <textarea
+                              name="SpeakerDetails"
+                              placeholder="Speaker Details"
+                              value={speaker.SpeakerDetails}
+                              onChange={(event) => handleInputChange(index, event)}
+                          />
+                      </div>
+                  ))}
+                  <button onClick={handleAddSpeaker}>Add Speaker</button>
+              </div>
+              : <></>}
+          <button onClick={handleSubmit}>Submit</button>
+      </div>
+  </div>
+
   )
 }
 
