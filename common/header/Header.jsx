@@ -19,13 +19,6 @@ const Header = () => {
 
   return (
     <>
-      {/* {loading && ( // Conditionally render loader based on loading state
-        <div id="loader">
-          <h1>Love Electronics?</h1>
-          <h1>Well look no further</h1>
-          <h1>Welcome to IEEE!</h1>
-        </div>
-      )} */}
       <Head />
       <header>
         <nav className="flexSB">
@@ -40,15 +33,20 @@ const Header = () => {
               <Link href="/joining">Join IEEE</Link>
             </li>
             <li>
-              <Link href="/team">Team</Link>
+              <Link href='/about'>About</Link>
             </li>
             <li>
-              <Link href="/contact">contact</Link>
+              <Link href='/team'>Team</Link>
             </li>
             <li>
-              <Link href="/event">Events</Link>
+              <Link href='/Awards'>Awards</Link>
             </li>
-            {/* Other menu items */}
+            <li>
+              <Link href='/event'>Events</Link>
+            </li>
+            <li>
+              <Link href='/contact'>Contact</Link>
+            </li>
           </ul>
           <div className="start">
             <div className="button">GET CERTIFICATE</div>
@@ -62,4 +60,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header

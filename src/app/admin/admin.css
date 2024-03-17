@@ -1,0 +1,352 @@
+.user-details-121 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.bgadmin73{
+    background-color: rgb(43, 43, 43);
+}
+
+.user-details-121 img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.user-info-121 {
+    flex-grow: 1;
+}
+
+.user-info-121 h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.logout-link-121 {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-link-121:hover {
+    text-decoration: underline;
+}
+.user-det121{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+
+/* ----------------------------------Admin.js css---------------------------------- */
+.table-container-122 {
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.data-table-122 {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #c09595; /* Light gray background */
+}
+
+.data-table-122 th,
+.data-table-122 td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+/* Alternate row background color */
+.data-table-122 tbody tr:nth-child(even) {
+    background-color: #c96a6a; /* Lighter gray background for even rows */
+}
+
+.form-container-122 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-container-122 form {
+    padding: 20px;
+    margin-bottom: 5px;
+    border-radius: 25px;
+    background-color: #f0f0f0;
+    display: inline-block;
+    text-align: left;
+}
+
+.form-container-122 label,
+.form-container-122 input,
+.form-container-122 select,
+.form-container-122 button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.email-input-122,
+.auth-select-122 {
+    width: calc(100% - 10px);
+    padding: 12px;
+}
+
+.submit-button-122 {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.submit-button-122:hover {
+    background-color: #0056b3;
+}
+
+/* ----------------------------------Admin.js css---------------------------------- */
+
+/* ----------------------------------Committee.js css---------------------------------- */
+.committee-container-123 {
+    margin-top: 20px;
+    color: white; /* Text color */
+    margin-bottom: 20px;
+}
+
+.committee-table-123 {
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #743f3f; /* Dark gray background */
+}
+
+.committee-table-123 th,
+.committee-table-123 td {
+    border: 2px solid white; /* White border */
+    padding: 8px;
+}
+
+.committee-table-123 th {
+    background-color: #473131; /* Dark gray background for header */
+}
+
+.committee-table-123 tbody tr:nth-child(even) {
+    background-color: #743f3f; /* Darker gray alternate row background color */
+}
+
+.form-container-123 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+    width: 400px; /* Fixed width */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    background-color: white; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding for content */
+}
+.dflex123{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+
+}
+
+.form-container-123 label,
+.form-container-123 input,
+.form-container-123 select,
+.form-container-123 button {
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0); /* Text color */
+}
+
+.form-container-123 input[type="file"]{
+    margin-bottom: 0 !important;
+}
+
+
+.form-container-123 input[type="text"],
+.form-container-123 input[type="file"],
+.form-container-123 select {
+    width: 200px;
+    background-color: #333; /* Dark gray background */
+    color: white; /* Text color */
+    border: 1px solid white; /* White border */
+    padding: 5px; /* Adjust padding */
+}
+
+.form-container-123 button {
+    background-color: #007bff; /* Blue button color */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.form-container-123 button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* ----------------------------------Committee.js css---------------------------------- */
+
+/* ----------------------------------Test.js css---------------------------------- */
+
+.testimonial-container-124 {
+    margin: 20px;
+    color: white; /* Text color */
+}
+
+.testimonial-table-124 {
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #743f3f; /* Dark gray background */
+}
+
+.testimonial-table-124 th,
+.testimonial-table-124 td {
+    border: 2px solid white; /* White border */
+    padding: 8px;
+}
+
+.testimonial-table-124 th {
+    background-color: #333; /* Dark gray background for header */
+}
+
+.testimonial-table-124 tbody tr:nth-child(even) {
+    background-color: #444; /* Darker gray alternate row background color */
+}
+
+.form-container-124 {
+    margin-top: 20px;
+    text-align: center;
+    width: 400px; /* Fixed width */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    background-color: white; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding for content */
+}
+
+.form-container-124 label,
+.form-container-124 input,
+.form-container-124 textarea,
+.form-container-124 button {
+    display: block;
+    margin-bottom: 10px;
+    color: black; /* Text color */
+}
+
+.form-container-124 input[type="text"],
+.form-container-124 textarea {
+    width: 100%;
+    background-color: #f0f0f0; /* Light gray background */
+    border: 1px solid black; /* Black border */
+    padding: 5px; /* Adjust padding */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.form-container-124 button {
+    background-color: #007bff; /* Blue button color */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.form-container-124 button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* ----------------------------------Test.js css---------------------------------- */
+
+/* ----------------------------------Event.js css---------------------------------- */
+
+.event-container-125 {
+    margin: 20px;
+    color: white; /* Text color */
+    padding-bottom: 40px;
+}
+
+.event-table-125 {
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #743f3f; /* Dark gray background */
+}
+
+.event-table-125 th,
+.event-table-125 td {
+    border: 2px solid white; /* White border */
+    padding: 8px;
+}
+
+.event-table-125 th {
+    background-color: #333; /* Dark gray background for header */
+}
+
+.event-table-125 tbody tr:nth-child(even) {
+    background-color: #444; /* Darker gray alternate row background color */
+}
+
+.form-container-125 {
+    margin-top: 20px;
+    text-align: center;
+    width: 400px; /* Fixed width */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    background-color: white; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding for content */
+}
+
+.form-container-125 label,
+.form-container-125 input,
+.form-container-125 textarea,
+.form-container-125 select,
+.form-container-125 button {
+    display: block;
+    margin-bottom: 10px;
+    color: black; /* Text color */
+}
+
+.form-container-125 input[type="text"],
+.form-container-125 textarea,
+.form-container-125 select {
+    width: calc(100% - 20px); /* Adjusted width */
+    background-color: #f0f0f0; /* Light gray background */
+    border: 1px solid black; /* Black border */
+    padding: 5px; /* Adjust padding */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.form-container-125 input[type="file"] {
+    display: inline-block;
+}
+
+.form-container-125 button {
+    background-color: #007bff; /* Blue button color */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.form-container-125 button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* ----------------------------------Event.js css---------------------------------- */
