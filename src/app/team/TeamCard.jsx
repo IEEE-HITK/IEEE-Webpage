@@ -3,9 +3,9 @@ import { team } from "@const/dummydata"
 
 const TeamCard = () => {
   return (
-    <>
+    <div className="teamflex12">
       {team.map((val) => (
-        <div className='items shadow'>
+        <div className='items12 shadow'>
           <div className='img'>
             <img src={val.cover} alt='' />
             <div className='overlay'>
@@ -15,14 +15,13 @@ const TeamCard = () => {
               <i className='fab fa-tiktok icon'></i>
             </div>
           </div>
-          <div className='details'>
+          <div className='details details12'>
             <h2>{val.name}</h2>
             <h4>{val.work}</h4>
-            <p>{val.email}</p>
           </div>
         </div>
       ))}
-    </>
+    </div>
   )
 }
 
