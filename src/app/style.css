@@ -1,64 +1,55 @@
+/* Apply glassmorphism effect to the cards */
 .testimonal .items {
   padding: 30px;
   transition: 0.5s;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1); /* Adjust opacity as needed */
+  backdrop-filter: blur(10px); /* Adjust blur intensity as needed */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Add shadow for a glassy effect */
 }
 
+/* Update the hover effect */
+.testimonal .items:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Adjust hover background opacity as needed */
+}
+
+/* Update the text color for better visibility */
+.testimonal h2,
+.testimonal p,
+.testimonal span,
+.testimonal h4 {
+  color: white; /* Set text color to white */
+}
+
+/* Ensure proper visibility of text */
 .testimonal .img {
   position: relative;
 }
+
 .testimonal img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+  display: block;
+  margin: auto;
 }
-.testimonal i {
-  position: absolute;
-  bottom: 0;
-  left: 60px;
-  background-color: #1eb2a6;
-  color: #fff;
-}
+
+/* Update the name styles */
 .testimonal .name {
   margin: 25px;
 }
-.testimonal .name h2 {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-.testimonal .name span {
-  color: #1eb2a6;
-}
-.testimonal p {
-  margin-top: 20px;
-  color: grey;
-  transition: 0.5s;
-}
-.testimonal .items:hover {
-  background-color: #1eb2a6;
-  color: #fff;
-  cursor: pointer;
-}
-.testimonal .items:hover span,
-.testimonal .items:hover p {
-  color: #fff;
-}
-.testimonal .items:hover i {
-  background-color: #fff;
-  color: #1eb2a6;
-}
 
-
-@media(max-width:750px)
-{
-  .grid2{
+/* Update the styles for small screens */
+@media(max-width:750px) {
+  .grid2 {
     display: flex !important;
     flex-direction: column !important;
   }
-  .flex{
+  .flex {
     display: flex !important;
     flex-direction: column !important;
   }
-  .img{
+  .img {
     display: flex !important;
     justify-content: center !important;
   }

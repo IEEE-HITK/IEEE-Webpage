@@ -1,5 +1,6 @@
+"use client"
 import React, { useState } from "react";
-import Back from "../common/back/Back";
+import Back from "@com/back/Back";
 import "./JoinIeee.css"; // Import CSS for styling
 import Awrapper from "../about/Awrapper";
 

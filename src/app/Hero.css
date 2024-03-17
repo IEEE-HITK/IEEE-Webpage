@@ -1,5 +1,5 @@
 .hero {
-  background-image: url("../../constant/images/bg.webp");
+  background-image: url("../../public/images/bg.webp");
   background-size: cover;
   background-attachment: fixed;
   position: absolute;
@@ -20,16 +20,20 @@
   margin: 0;
   padding: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 750px) {
   .margin {
-    height: 40vh;
+      height: 40vh;
   }
   .hero {
-    background-position: right;
-    padding-top: 50%;
-    height: 80vh;
+      background-position: right;
+      padding-top: 50%;
+      height: 80vh;
+      padding-right: 40px; /* Adjust padding for smaller screens */
   }
-  .hero .row {
-    width: 100%;
+  .hero #heading {
+      text-align: center; /* Center the heading text */
+  }
+  .hero #heading h3 {
+      font-size: 24px; /* Reduce font size for smaller screens */
   }
 }
