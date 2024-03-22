@@ -252,3 +252,13 @@ p {
     height: 30px; ;
   }
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+.scroll {
+  scrollbar-width: none;
+}

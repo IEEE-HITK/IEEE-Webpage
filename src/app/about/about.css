@@ -16,7 +16,7 @@
 
 
 .aboutHome .right {
-  padding: 80px 50px;
+  padding: 116px 50px;
 }
 
 .aboutHome .items {
@@ -91,6 +91,25 @@
 }
 
 @media screen and (max-width: 768px) {
+  .left img{
+    width:190vw !important;
+    margin-left: 25vw;
+    height:auto !important;
+  }
+  .h-full{
+    height: 40% !important;
+  }
+  .container{
+    padding: 0px !important;
+  }
+  .left{
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    height: auto;
+    align-items: center;
+    padding: 0px !important;
+  }
   .aboutHome .container {
     flex-direction: column-reverse;
   }
@@ -113,4 +132,16 @@
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
+}
+#globeViz{
+  width:"80vw";
+  margin-left:"-30vw";
+  background:"white";
+}
+.globevid{
+  margin-top:15vh;
+  margin-left:-5vw;
+}
+.left{
+  padding: 116px 50px 
 }

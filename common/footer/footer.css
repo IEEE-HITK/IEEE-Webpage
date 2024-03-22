@@ -110,3 +110,9 @@ footer .last i {
 .legal i {
   color: #1eb2a6;
 }
+
+.imgg{
+  width:5rem;
+  height:5rem;
+  border-radius:50%;
+}
