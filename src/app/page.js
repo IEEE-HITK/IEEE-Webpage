@@ -14,6 +14,7 @@ const Home = () => {
       <AboutCard />
       {/* <HowWeDo /> */}
       <Testimonal />
+      
       <TestCard />
       <Hblog />
     </>
