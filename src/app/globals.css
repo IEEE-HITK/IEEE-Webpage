@@ -262,3 +262,6 @@ body::-webkit-scrollbar {
 .scroll {
   scrollbar-width: none;
 }
+.disflex{
+  display: flex;
+}
