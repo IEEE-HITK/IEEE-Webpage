@@ -18,6 +18,7 @@ const Committee = () => {
     const [li, setLi] = React.useState("");
     const [gm, setGm] = React.useState("");
     const [tw, setTw] = React.useState("");
+    const [status, setStatus] = React.useState("");
 
     const handleChange = (e) => {
         setName(e.target.value);
@@ -39,6 +40,9 @@ const Committee = () => {
     }
     const handleChange7 = (e) => {
         setTw(e.target.value);
+    }
+    const handleChange11 = (e) => {
+        setStatus(e.target.value);
     }
     const handleUpload = async() => {
         const data = new FormData();
@@ -74,7 +78,7 @@ const Committee = () => {
         });
     }
     const handleSubmit = () => {
-        const dataa = {Name:name,Post:post,Type:type,Image:image,Li:li,Gm:gm,Tw:tw};
+        const dataa = {Name:name,Post:post,Type:type,Image:image,Li:li,Gm:gm,Tw:tw,Status:status};
         fetch('/api/com', {
             method: 'POST',
             headers: {
@@ -102,6 +106,7 @@ const Committee = () => {
                     <th>Name</th>
                     <th>Post</th>
                     <th>Type</th>
+                    <th>Status</th>
                     <th>Image</th>
                     <th>Linkedin</th>
                     <th>Gmail</th>
@@ -116,7 +121,8 @@ const Committee = () => {
                             <td>{item.Name}</td>
                             <td>{item.Post}</td>
                             <td>{item.Type}</td>
-                            <td><img src={item.Image} alt="not proper pic" /></td>
+                            <td>{item.Status}</td>
+                            <td><img style={{width:"200px",height:"auto"}} src={item.Image} alt="not proper pic" /></td>
                             <td>{item.Li}</td>
                             <td>{item.Gm}</td>
                             <td>{item.Tw}</td>
@@ -142,6 +148,13 @@ const Committee = () => {
                 <select id="type" name="type" placeholder="Enter Type" onChange={handleChange3}>
                     <option value="Fac">Faculty</option>
                     <option value="Stu">Student</option>
+                </select>
+            </div>
+            <div className='dflex123'>
+                <label for="type">Status:</label>
+                <select id="type" name="type" placeholder="Enter Type" onChange={handleChange11}>
+                    <option value="Cur">Current member</option>
+                    <option value="Ex">Ex-member</option>
                 </select>
             </div>
             <div className='dflex123'>

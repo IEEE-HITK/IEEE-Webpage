@@ -20,6 +20,13 @@ const Header = () => {
   return (
     <>
       <Head />
+      {loading &&
+      <div id="loader">
+        <h1>Love Electronics?</h1>
+        <h1>Well..Look no further</h1>
+        <h1>Welcome to IEEE!</h1>
+      </div>
+}
       <header>
         <nav className="flexSB">
           <ul

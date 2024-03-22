@@ -1,7 +1,7 @@
 import React from "react";
 import { blog } from "@const/dummydata";
 import "./footer.css";
-
+import { AnimatedTooltipPreview } from "./tips";
 const Footer = () => {
   return (
     <>
@@ -51,26 +51,9 @@ const Footer = () => {
               <li className="text-white">Feedbacks</li>
             </ul>
           </div>
-          <div className="box">
-            <h3 className="text-white">Recent Post</h3>
-            {blog.slice(0, 3).map((val, index) => (
-              <div key={index} className="text-white items flexSB">
-                <div className="img">
-                  <img src={val.cover} alt="" />
-                </div>
-                <div className="text">
-                  <span>
-                    <i className="fa fa-calendar-alt"></i>
-                    <label htmlFor="">{val.date}</label>
-                  </span>
-                  <span>
-                    <i className="fa fa-user"></i>
-                    <label htmlFor="">{val.type}</label>
-                  </span>
-                  <h4>{val.title.slice(0, 40)}...</h4>
-                </div>
-              </div>
-            ))}
+          <div className="boxxxx">
+            <h2 style={{color:"white"}}>Meet the devs!</h2>
+            <AnimatedTooltipPreview />
           </div>
           <div className="box last">
             <h3 className="text-white">Have a Questions?</h3>
