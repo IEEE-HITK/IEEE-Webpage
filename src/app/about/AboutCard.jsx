@@ -29,6 +29,7 @@ const AboutCard = () => {
           </div>
           <div className='right row'>
             <Heading subtitle='vision' title='Shaping the Future: The IEEE Microwave Theory and Technology Societys Vision' />
+            
             <div className='items'>
               {homeAbout.map((val) => {
                 return (
