@@ -15,10 +15,10 @@ const Head = () => {
     outerScale={5}
     showSystemCursor={true} />
       <section className='head'>
-        <div className='container flexSB'>
+        <div className='container flexSB toptop'>
           <div className='logo'>
-            <h1>IEEE</h1>
-            <span>IEEE MTT-S HITK SBC CHAPTER</span>
+            <h1 style={{display:"flex"}}><p style={{width:"20px",minWidth:"20px"}}></p>IEEE</h1>
+            <span style={{display:"flex"}}> <p style={{width:"20px",minWidth:"20px"}}></p>IEEE MTT-S HITK SBC CHAPTER</span>
           </div>
           <div className="social">
             <a

@@ -27,9 +27,10 @@ const AboutCard = () => {
             {/* <video className="globevid" autoPlay loop muted src="./globe.mp4" /> */}
             
           </div>
-          <div className='right row'>
-            <Heading subtitle='vision' title='Shaping the Future: The IEEE Microwave Theory and Technology Societys Vision' />
+          <div style={{color:"white"}} className='right row'>
+            <Heading  subtitle='vision' title='Shaping the Future: The IEEE Microwave Theory and Technology Societys Vision' />
             
+
             <div className='items'>
               {homeAbout.map((val) => {
                 return (

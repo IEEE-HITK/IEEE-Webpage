@@ -10,6 +10,7 @@ import {
 async function getData() {
   const response = await fetch("/api/event");
   const events = await response.json();
+  console.log(events)
   return events;
 }
 

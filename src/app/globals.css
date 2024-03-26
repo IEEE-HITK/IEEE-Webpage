@@ -169,13 +169,14 @@ p {
   background-image: url("../../public/images/back.webp");
   background-size: cover;
   background-attachment: fixed;
-  position: absolute; /* Change position to relative */
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
+  position: relative; /* Change position to relative */
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100vw;
   height: 100vh;
-  padding-top: 50%;
   padding-right: 50px;
   color: #fff;
   text-align: center;
@@ -236,7 +237,6 @@ p {
   }
   .back {
     background-position: center;
-    padding-top: 50%;
     height: 80vh;
   }
 
@@ -251,6 +251,7 @@ p {
     height: 30px; ;
   }
 }
+
 
 body::-webkit-scrollbar {
   display: none;

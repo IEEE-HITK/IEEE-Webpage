@@ -19,9 +19,9 @@ useEffect(() => {
       <section className='back'>
         {/* Include your breadcrumb component here */}
         {/* <h2>HOME{path}</h2> */}
-        <h1>{title}</h1>
+          <h1>{title}</h1>
 
-      </section>
+        </section>
       <div className='margin'></div>
       {/* Optionally, you can add a button to go back */}
       {/* <button onClick={handleGoBack}>Go Back</button> */}
