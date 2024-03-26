@@ -1,7 +1,9 @@
 import { NextResponse,NextRequest } from "next/server";
 import {getEventData,postEventData,delEventData,putEventData} from '@cont/event';
+
+
 export async function GET(){
-    try{
+    try {
         const {data,err} = await getEventData();
         if(err){
             throw new Error(err);
@@ -10,7 +12,7 @@ export async function GET(){
             data: data,
             message: "Hello",
         });
-    }catch(error){
+    } catch(error) {
         console.log('Error fetching Event dataaa:', error);
         return NextResponse.json({
             data: [],

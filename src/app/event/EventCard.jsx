@@ -1,38 +1,77 @@
-import React from "react"
-import { blog } from "@const/dummydata"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faUser, faCalendarAlt, faComments } from "@fortawesome/free-solid-svg-icons"
-import   { UserOutlined } from  '@ant-design/icons';
-const EventCard = () => {
-  return (
-    <>
-      {blog.map((val) => (
-        <div className="items shadow">
-          <div className="img">
-            <img src={val.cover} alt="" />
-          </div>
-          <div className="text">
-            <div className="admin flexSB">
-              <span>
-              <UserOutlined/>
-                <label htmlFor="">{val.type}</label>
-              </span>
-              <span>
-                <FontAwesomeIcon icon={faCalendarAlt} />
-                <label htmlFor="">{val.date}</label>
-              </span>
-              <span>
-                <FontAwesomeIcon icon={faComments} />
-                <label htmlFor="">{val.com}</label>
-              </span>
-            </div>
-            <h1>{val.title}</h1>
-            <p>{val.desc}</p>
-          </div>
-        </div>
-      ))}
-    </>
-  )
+"use client";
+import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCalendarAlt,
+  faComments,
+  faUserAlt,
+} from "@fortawesome/free-solid-svg-icons";
+
+async function getData() {
+  const response = await fetch("/api/event");
+  const events = await response.json();
+  return events;
 }
 
-export default EventCard
+const EventCard = async () => {
+  const events = await getData();
+  const data = events.data;
+
+  return (
+    <div className="flex flex-wrap justify-center">
+      {Array.isArray(data) &&
+        data.map((val) => (
+          <div
+            className="w-96 bg-white shadow-md m-4 rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
+            key={val?._id}
+          >
+            <div className="img">
+              <img src={val?.EventBanner} alt="" className="w-full h-40 object-cover" />
+            </div>
+            <div className="text p-4">
+              <div className="admin flex justify-between items-center">
+                <span className="flex items-center">
+                  <FontAwesomeIcon
+                    icon={faUserAlt}
+                    style={{ fontSize: "12px" }}
+                    className="mr-2"
+                  />
+                  <label htmlFor="">{val?.EventType}</label>
+                </span>
+                <span>
+                  <FontAwesomeIcon icon={faCalendarAlt} className="mr-2" />
+                  <label htmlFor="">{val?.Time}</label>
+                </span>
+                <span className="flex items-center">
+                  <FontAwesomeIcon
+                    icon={faComments}
+                    style={{ fontSize: "12px" }}
+                    className="mr-2"
+                  />
+                  <label htmlFor="">{val?.EventDetails}</label>
+                </span>
+              </div>
+              <h1 className="text-lg font-bold mt-2">{val?.Name}</h1>
+              <p className="text-gray-600">{val?.Venue}</p>
+              {/* Apply vertical scroll on small screens */}
+              <div className="event-gallery mt-4 overflow-y-auto max-h-48">
+                <h2 className="text-lg font-semibold mb-2">Event Gallery</h2>
+                <div className="flex space-x-4">
+                  {val?.EventGallery.map((image, index) => (
+                    <img
+                      key={index}
+                      src={image}
+                      alt={`Event ${index}`}
+                      className="w-24 h-24 rounded-md shadow-md object-cover"
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+  );
+};
+
+export default EventCard;

@@ -78,7 +78,6 @@ const JoinIeee = () => {
           ></textarea>
           <button type="submit">Join IEEE</button>
         </form>
-        <Awrapper />
       </div>
     </>
   );

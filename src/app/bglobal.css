@@ -1,3 +1,7 @@
+
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -89,6 +93,7 @@ body {
   max-width: 100%; /* Set maximum width */
   overflow-x: hidden; /* Hide horizontal overflow */
 }
+/------------global-----------/
 .container {
   max-width: 85%;
   margin: auto;
@@ -144,7 +149,7 @@ button:hover {
   color: #fff;
 }
 
-/*------------global-----------*/
+/------------global-----------/
 #heading {
   text-align: center;
   padding: 40px 0;
@@ -169,13 +174,13 @@ p {
   background-image: url("../../public/images/back.webp");
   background-size: cover;
   background-attachment: fixed;
-  position: absolute; /* Change position to relative */
+  position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   width: 100%;
   height: 100vh;
-  padding-top: 50%;
+  padding-top: 30%;
   padding-right: 50px;
   color: #fff;
   text-align: center;
@@ -190,7 +195,7 @@ p {
   text-transform: uppercase;
 }
 .margin {
-  margin-top: 5%;
+  margin-top: 40.3%;
 }
 .grid {
   display: grid;

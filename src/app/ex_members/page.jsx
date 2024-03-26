@@ -153,3 +153,13 @@
 // }
 
 // export default ex;
+
+import React from 'react'
+
+const ex_member = () => {
+  return (
+    <div>ex_member</div>
+  )
+}
+
+export default ex_member

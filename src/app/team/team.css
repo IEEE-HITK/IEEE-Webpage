@@ -93,13 +93,14 @@
   justify-content: center;
 }
 
-@media(max-width:750px)
-{
-  .items12{
-    width: 300px;
-    height: 450px;
+/* Adjustments for smaller screens */
+@media (max-width: 750px) {
+  .items12 {
+    width: calc(100% - 40px); /* Adjust width to fit screen */
+    margin: 10px 20px; /* Adjust margin to create space */
+    height: auto; /* Adjust height to fit content */
   }
-  .details12 p{
-    display: none;
+  .details12 p {
+    display: none; /* Hide details on smaller screens */
   }
 }
