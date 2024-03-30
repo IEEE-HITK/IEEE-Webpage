@@ -8,7 +8,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 
-
 const EventCard = async () => {
   let events = [];
   const [data, setData] = useState(events);
