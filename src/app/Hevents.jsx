@@ -8,28 +8,29 @@ import {
   faComments,
   faUserAlt,
 } from "@fortawesome/free-solid-svg-icons";
-async function getData() {
-  try {
-    const response = await fetch("/api/event");
-    if (!response.ok) {
-      throw new Error('Failed to fetch data');
-    }
-    const events = await response.json();
-    console.log(events);
-    return events;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error;
-  }
-}
+
 
 
 const Hevents = async () => {
+  let events = [];
+  const [data, setData] = useState(events);
+  useEffect(()=>{
+    async function getData() {
+      const response = await fetch("/api/event");
+      const events = await response.json();
+      console.log(events)
+      let dd=await events.data;
+      dd = dd.slice(-3)
+      dd.reverse();
+      setData(dd);
+    }
+    getData();
+    
+  },[])
   const router = useRouter();
 
-  const events = await getData();
-  const data = events.data.slice(-3); // Select the last 3 events
-
+  
+  // const data = events.data.slice(-3); 
   const handleButtonClick = (event) => {
     event.preventDefault();
     router.push("/event");
