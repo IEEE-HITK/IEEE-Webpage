@@ -3,7 +3,7 @@ import { blog } from "@const/dummydata";
 import "./footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMap,faPhoneAlt,faPaperPlane,  faHeart } from "@fortawesome/free-solid-svg-icons";
-import { AnimatedTooltipPreview } from "./tips";
+import { AnimatedTooltipPreview } from "./Tips";
 const Footer = () => {
   return (
     <>
