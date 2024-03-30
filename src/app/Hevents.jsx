@@ -11,10 +11,7 @@ import {
 
 
 
-
 const Hevents = async () => {
-  const router = useRouter();
-
   let events = [];
   const [data, setData] = useState(events);
   useEffect(()=>{
@@ -23,13 +20,16 @@ const Hevents = async () => {
       const events = await response.json();
       console.log(events)
       let dd=await events.data;
-      dd=dd.slice(-3);
+      dd = dd.slice(-3)
       dd.reverse();
       setData(dd);
     }
     getData();
     
   },[])
+  const router = useRouter();
+
+  
   const handleButtonClick = (event) => {
     event.preventDefault();
     router.push("/event");
