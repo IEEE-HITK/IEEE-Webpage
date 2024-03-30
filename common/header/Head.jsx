@@ -1,6 +1,7 @@
 import React from "react"
 import dynamic from 'next/dynamic';
-// import    from "@fortawesome/free-solid-svg-icons";from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Head = () => {
   const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
     ssr: false,
@@ -27,7 +28,7 @@ const Head = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fab fa-facebook-f icon"></i>
+              {/* <FontAwesomeIcon icon={faFacebook} /> */}
             </a>
             <a
               href="https://www.instagram.com"

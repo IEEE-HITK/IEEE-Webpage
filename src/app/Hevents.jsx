@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 
@@ -8,7 +8,6 @@ import {
   faComments,
   faUserAlt,
 } from "@fortawesome/free-solid-svg-icons";
-
 async function getData() {
   try {
     const response = await fetch("/api/event");
@@ -24,17 +23,17 @@ async function getData() {
   }
 }
 
-const EventCard = async () => {
+
+const Hevents = async () => {
   const router = useRouter();
 
   const events = await getData();
-  const data = events.data;
+  const data = events.data.slice(-3); // Select the last 3 events
 
   const handleButtonClick = (event) => {
     event.preventDefault();
-    router.push("/eevent");
+    router.push("/event");
   };
-
 
   return (
     <div className="flex flex-wrap justify-center">
@@ -76,21 +75,8 @@ const EventCard = async () => {
               </div>
               <h1 className="text-lg font-bold mt-2">{val?.Name}</h1>
               <p>{val?.EventDetails}</p>
-              {/* <div className="event-gallery mt-4 overflow-y-auto max-h-48">
-                <h2 className="text-lg font-semibold mb-2">Event Gallery</h2>
-                <div className="flex space-x-4">
-                  {val?.EventGallery.map((image, index) => (
-                    <img
-                      key={index}
-                      src={image}
-                      alt={`Event ${index}`}
-                      className="w-24 h-24 rounded-md shadow-md object-cover"
-                    />
-                  ))}
-                </div>
-              </div> */}
               <button onClick={handleButtonClick}>
-                Know more
+                more events
               </button>{" "}
             </div>
           </div>
@@ -99,4 +85,4 @@ const EventCard = async () => {
   );
 };
 
-export default EventCard;
+export default Hevents;

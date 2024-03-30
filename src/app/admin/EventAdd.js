@@ -12,7 +12,7 @@ const TestAdd = () => {
         fetchData();
     },[]);
     const [name, setName] = React.useState("");
-    const [eventType, setEventType] = React.useState("");
+    const [eventType, setEventType] = React.useState("non-speaker");
     const [message, setMessage] = React.useState("");
     const [banner, setBanner] = React.useState("");
     const [time, setTime] = React.useState("");

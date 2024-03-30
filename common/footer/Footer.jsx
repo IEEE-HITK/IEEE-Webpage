@@ -1,6 +1,8 @@
 import React from "react";
 import { blog } from "@const/dummydata";
 import "./footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMap,faPhoneAlt,faPaperPlane,  faHeart } from "@fortawesome/free-solid-svg-icons";
 import { AnimatedTooltipPreview } from "./tips";
 const Footer = () => {
   return (
@@ -25,7 +27,6 @@ const Footer = () => {
             <ul>
               <li className="text-white">About Us</li>
               <li className="text-white">Services</li>
-              <li className="text-white">Courses</li>
               <li className="text-white">Blog</li>
               <li className="text-white">Contact us</li>
             </ul>
@@ -33,8 +34,6 @@ const Footer = () => {
           <div className="box link">
             <h3 className="text-white">Quick Links</h3>
             <ul>
-              <li className="text-white">Contact Us</li>
-              <li className="text-white">Pricing</li>
               <li className="text-white">Terms & Conditions</li>
               <li className="text-white">Privacy</li>
               <li className="text-white">Feedbacks</li>
@@ -48,15 +47,15 @@ const Footer = () => {
             <h3 className="text-white">Have a Questions?</h3>
             <ul className="text-white">
               <li>
-                <i className="fa fa-map"></i>
+              <FontAwesomeIcon  icon={faMap} />
                 Anandapur near Urbana complex, Kolkata
               </li>
               <li>
-                <i className="fa fa-phone-alt"></i>
+              <FontAwesomeIcon  icon={ faPhoneAlt } />
                 9382305863
               </li>
               <li>
-                <i className="fa fa-paper-plane"></i>
+              <FontAwesomeIcon  icon={ faPaperPlane } />
                 ieee@gmail.com
               </li>
             </ul>
@@ -65,8 +64,9 @@ const Footer = () => {
       </footer>
       <div className="legal">
         <p>
-          Copyright ©2024 All rights reserved | This template is made with{" "}
-          <i className="fa fa-heart"></i> by Arnab Chakraborty
+          Copyright ©2024 All rights reserved | This template is made {" "}
+          <FontAwesomeIcon  icon={ faHeart} />
+            by Arnab Chakraborty
         </p>
       </div>
     </>

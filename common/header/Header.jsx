@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Head from "./Head";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
 import "./header.css";
 
 const Header = () => {
@@ -61,7 +61,7 @@ const Header = () => {
             <div className="button">GET CERTIFICATE</div>
           </div>
           <button className="toggle" onClick={() => setClick(!click)}>
-            {click ? <i className="fa fa-times"> </i> : <i className="fa fa-bars"></i>}
+            {click ?  <FontAwesomeIcon  icon={ faTimes } />:  <FontAwesomeIcon  icon={ faBars } />}
           </button>
         </nav>
       </header>

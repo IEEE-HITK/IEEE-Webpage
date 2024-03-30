@@ -1,9 +1,10 @@
-'use client'
+"use client"
 import React, { useState } from "react";
 import Back from "@com/back/Back";
 import TeamCard from "./TeamCard";
 import ExTeamCard from "./ExTeamCard";
-import FacultyCard from "./facultyCard"; // Import FacultyCard
+import FacultyCard from "./facultyCard";
+import ExFacultyCard from "./ExFacultyCard"; // Import ExFacultyCard
 import "./team.css";
 import Awrapper from "../about/Awrapper";
 import "../about/about.css";
@@ -33,7 +34,7 @@ const Team = () => {
           onClick={toggleDropdown}
           className="inline-flex items-center px-4 py-2 bg-gray-300 text-gray-700 font-semibold rounded hover:bg-gray-400 focus:outline-none focus:ring focus:ring-gray-500 focus:ring-opacity-50"
         >
-          <span>{selectedOption === "current" ? "Current Team" : selectedOption === "ex" ? "Ex Team" : "Faculties"}</span>
+          <span>{selectedOption === "current" ? "Current Team" : selectedOption === "ex" ? "Ex Team" : selectedOption === "faculties" ? "Faculties" : "Ex Faculties"}</span>
           <svg
             className={`ml-2 h-5 w-5 ${isDropdownOpen ? "transform rotate-180" : ""}`}
             xmlns="http://www.w3.org/2000/svg"
@@ -65,11 +66,18 @@ const Team = () => {
                 Ex Team
               </button>
               <button
-                onClick={() => handleOptionChange("faculties")} // Set option to "faculties"
+                onClick={() => handleOptionChange("faculties")}
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
                 role="menuitem"
               >
                 Faculties
+              </button>
+              <button
+                onClick={() => handleOptionChange("exFaculties")} // Set option to "exFaculties"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+                role="menuitem"
+              >
+                Ex Faculties
               </button>
             </div>
           </div>
@@ -77,7 +85,7 @@ const Team = () => {
       </div>
       <section className="team">
         <div className="pageflex">
-          {selectedOption === "current" ? <TeamCard /> : selectedOption === "ex" ? <ExTeamCard /> : <FacultyCard />}
+          {selectedOption === "current" ? <TeamCard /> : selectedOption === "ex" ? <ExTeamCard /> : selectedOption === "faculties" ? <FacultyCard /> : <ExFacultyCard />}
         </div>
       </section>
     </>
