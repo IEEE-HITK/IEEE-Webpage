@@ -12,7 +12,7 @@ const TestAdd = () => {
         fetchData();
     },[]);
     const [name, setName] = React.useState("");
-    const [eventType, setEventType] = React.useState("");
+    const [eventType, setEventType] = React.useState("non-speaker");
     const [message, setMessage] = React.useState("");
     const [banner, setBanner] = React.useState("");
     const [time, setTime] = React.useState("");
@@ -95,7 +95,13 @@ const TestAdd = () => {
         });
     }
     const handleSubmit = async() => {
-        const dataa = {Name:name,EventDetails:message,EventBanner:banner,Time:time,Venue:venue,EventType:eventType,Speaker:speakers};
+        let dataa
+        if(eventType === "speaker"){
+            dataa = {Name:name,EventDetails:message,EventBanner:banner,Time:time,Venue:venue,EventType:eventType,Speaker:speakers};
+        }
+        else{
+            dataa = {Name:name,EventDetails:message,EventBanner:banner,Time:time,Venue:venue,EventType:eventType};
+        }
         await fetch('/api/event', {
             method: 'POST',
             headers: {

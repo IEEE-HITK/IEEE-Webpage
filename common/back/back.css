@@ -1,0 +1,11 @@
+@media(max-width:760px){
+
+    .back h1{
+        font-size: 60px;
+        font-weight: 500;
+        
+    }
+}
+.back h1{
+    text-shadow: 1px 1px 1px #000;
+}

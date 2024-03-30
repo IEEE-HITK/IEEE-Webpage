@@ -254,13 +254,13 @@ p {
 
 
 body::-webkit-scrollbar {
-  display: none;
+  display: none !important;
 }
 .scroll::-webkit-scrollbar {
-  display: none;
+  display: none !important;
 }
 .scroll {
-  scrollbar-width: none;
+  scrollbar-width: none !important;
 }
 .disflex{
   display: flex;

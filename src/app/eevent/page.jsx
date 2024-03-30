@@ -1,4 +1,3 @@
-"use client"
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,23 +7,20 @@ import {
   faUserAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import "./eevent.css";
+import axios from "axios";
 
 const EEventPage = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch("/api/event");
-        const data = await response.json();
-        console.log("data: ", data.data);
-        setEvents(data.data);
-      } catch (error) {
-        console.error("Error fetching events:", error);
-      }
+    const fetchData = async () => {
+      const res = await fetch('/api/event');
+      const data = await res.json();
+      console.log(data.data);
+      setEvents(data.data);
     };
 
-    fetchEvents();
+    fetchData();
   }, []);
 
   return (

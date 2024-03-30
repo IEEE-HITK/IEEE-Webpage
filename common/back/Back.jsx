@@ -1,7 +1,7 @@
 
 "use client"
 import { useState,useEffect } from 'react'
-
+import './back.css'
 const Back = ({ title }) => {
 const [path, setPath] = useState(" ")
 useEffect(() => {

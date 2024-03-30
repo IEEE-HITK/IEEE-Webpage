@@ -9,7 +9,9 @@ import "./header.css";
 const Header = () => {
   const [click, setClick] = useState(false);
   const [loading, setLoading] = useState(true);
-
+  useEffect(()=>{
+    console.log(click)
+  },[click])
   useEffect(() => {
     // Simulate content loading delay
     const timeout = setTimeout(() => {
@@ -60,7 +62,10 @@ const Header = () => {
           <div className="start">
             <div className="button">GET CERTIFICATE</div>
           </div>
-          <button className="toggle" onClick={() => setClick(!click)}>
+          <button className="toggle" onClick={() => {
+            console.log(click)
+            setClick(!click)
+          }}>
             {click ? <i className="fa fa-times"> </i> : <i className="fa fa-bars"></i>}
           </button>
         </nav>
