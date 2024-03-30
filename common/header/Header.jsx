@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Head from "./Head";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./header.css";
 
 const Header = () => {

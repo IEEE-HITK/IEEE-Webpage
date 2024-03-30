@@ -24,7 +24,7 @@ const Awrapper = () => {
                   <div className="flex-col space-y-2 items-center px-0 md:px-6">
                     {" "}
                     <div className="h-1.5 w-10 rounded-2xl bg-white bg-gradient-to-r from-sky-300 via-rose-200 to-lime-300"></div>{" "}
-                    <div className="text-5xl font-bold">69%</div>{" "}
+                    <div className="text-5xl font-bold">0</div>{" "}
                     <div className="text-sm font-medium text-gray-200">
                       Tailblocks has more than 15k+ visitors per month.
                     </div>{" "}

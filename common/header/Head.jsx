@@ -1,5 +1,6 @@
 import React from "react"
 import dynamic from 'next/dynamic';
+// import    from "@fortawesome/free-solid-svg-icons";from "@fortawesome/free-solid-svg-icons";
 const Head = () => {
   const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
     ssr: false,

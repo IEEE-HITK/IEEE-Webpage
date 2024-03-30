@@ -1,0 +1,18 @@
+.bbck {
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative; /* Change position to relative */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 20% ;
+    /* padding-right: 50px; */
+    color: #fff;
+    text-align: center;
+
+    background-position: center;
+    background-repeat: no-repeat;
+}

@@ -13,12 +13,12 @@ const Committee = () => {
     },[]);
     const [name, setName] = React.useState("");
     const [post, setPost] = React.useState("");
-    const [type, setType] = React.useState("");
+    const [type, setType] = React.useState("Fac");
     const [image, setImage] = React.useState("");
     const [li, setLi] = React.useState("");
     const [gm, setGm] = React.useState("");
     const [tw, setTw] = React.useState("");
-    const [status, setStatus] = React.useState("");
+    const [status, setStatus] = React.useState("Cur");
 
     const handleChange = (e) => {
         setName(e.target.value);

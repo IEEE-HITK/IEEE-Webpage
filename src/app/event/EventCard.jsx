@@ -1,5 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarAlt,
@@ -10,13 +12,21 @@ import {
 async function getData() {
   const response = await fetch("/api/event");
   const events = await response.json();
-  console.log(events)
+  console.log(events);
   return events;
 }
 
 const EventCard = async () => {
+  const router = useRouter();
+
   const events = await getData();
   const data = events.data;
+
+  const handleButtonClick = (event) => {
+    event.preventDefault();
+    router.push("/eevent");
+  };
+
 
   return (
     <div className="flex flex-wrap justify-center">
@@ -27,7 +37,11 @@ const EventCard = async () => {
             key={val?._id}
           >
             <div className="img">
-              <img src={val?.EventBanner} alt="" className="w-full h-40 object-cover" />
+              <img
+                src={val?.EventBanner}
+                alt=""
+                className="w-full h-40 object-cover"
+              />
             </div>
             <div className="text p-4">
               <div className="admin flex justify-between items-center">
@@ -49,13 +63,12 @@ const EventCard = async () => {
                     style={{ fontSize: "12px" }}
                     className="mr-2"
                   />
-                  <label htmlFor="">{val?.EventDetails}</label>
+                  <label htmlFor="">{val?.Venue}</label>
                 </span>
               </div>
               <h1 className="text-lg font-bold mt-2">{val?.Name}</h1>
-              <p className="text-gray-600">{val?.Venue}</p>
-              {/* Apply vertical scroll on small screens */}
-              <div className="event-gallery mt-4 overflow-y-auto max-h-48">
+              <p>{val?.EventDetails}</p>
+              {/* <div className="event-gallery mt-4 overflow-y-auto max-h-48">
                 <h2 className="text-lg font-semibold mb-2">Event Gallery</h2>
                 <div className="flex space-x-4">
                   {val?.EventGallery.map((image, index) => (
@@ -67,7 +80,10 @@ const EventCard = async () => {
                     />
                   ))}
                 </div>
-              </div>
+              </div> */}
+              <button onClick={handleButtonClick}>
+                Know more
+              </button>{" "}
             </div>
           </div>
         ))}
