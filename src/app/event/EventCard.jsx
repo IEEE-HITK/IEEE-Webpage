@@ -29,7 +29,7 @@ const EventCard = async () => {
       {Array.isArray(data) &&
         data.map((val) => (
           <div
-            className="w-96 bg-white shadow-md m-4 rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
+            className="w-96 wid121 bg-white shadow-md m-4 rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
             key={val._id}
           >
             <div className="img">
@@ -61,19 +61,7 @@ const EventCard = async () => {
               <h1 className="text-lg font-bold mt-2">{val.Name}</h1>
               <p className="text-gray-600">{val.Venue}</p>
               {/* Apply vertical scroll on small screens */}
-              <div className="event-gallery mt-4 overflow-y-auto max-h-48">
-                <h2 className="text-lg font-semibold mb-2">Event Gallery</h2>
-                <div className="flex space-x-4">
-                  {val?.EventGallery.map((image, index) => (
-                    <img
-                      key={index}
-                      src={image}
-                      alt={`Event ${index}`}
-                      className="w-24 h-24 rounded-md shadow-md object-cover"
-                    />
-                  ))}
-                </div>
-              </div>
+              
             </div>
           </div>
         ))}

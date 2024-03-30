@@ -8,7 +8,7 @@ const Event = () => {
     <>
       <Back title="IEEE EVENTS" />
       <section className="blog padding">
-        <div className="container grid2">
+        <div className="container">
           <EventCard />
         </div>
       </section>

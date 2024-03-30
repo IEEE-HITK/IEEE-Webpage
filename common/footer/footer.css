@@ -117,3 +117,9 @@ footer .last i {
   height:5rem;
   border-radius:50%;
 }
+@media(max-width:760px)
+{
+  footer{
+    padding:20px;
+  }
+}

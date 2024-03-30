@@ -239,6 +239,9 @@ p {
     background-position: center;
     height: 80vh;
   }
+  .wid121{
+    width: 90vw !important;
+  }
 
 }
 
